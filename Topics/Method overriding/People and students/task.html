@@ -1,0 +1,35 @@
+<h2>People and students</h2>
+<html>
+ <head></head>
+ <body>
+  <p>Here's a class hierarchy with two classes:</p> 
+  <pre><code class="language-python">class Person:
+    def __init__(self, name, last_name, age=None):
+        self.name = name
+        self.last_name = last_name
+        self.age = age
+        print("Person created!")
+
+
+class Student(Person):
+    def __init__(self, name, last_name, group):
+        super().__init__(name, last_name)
+        self.group = group
+        print("Student created!")</code></pre> 
+  <p>Suppose you want to create an instance of the class <code class="language-python">Student</code>:</p> 
+  <pre><code class="language-python">jack = Student("Jack", "Smith", "4153")</code></pre> 
+  <p>What will be the output of this code?</p> 
+  <p>a)</p> 
+  <pre><code class="language-python"># Student created!</code></pre> 
+  <p>b)</p> 
+  <pre><code class="language-python"># Person created!</code></pre> 
+  <p>c)</p> 
+  <pre><code class="language-python"># Student created!
+# Person created!</code></pre> 
+  <p>d)</p> 
+  <pre><code class="language-python"># Person created!
+# Student created!</code></pre> 
+  <p>e)</p> 
+  <pre><code class="language-python"># Jack Smith 4153</code></pre>
+ </body>
+</html>

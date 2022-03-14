@@ -1,0 +1,19 @@
+<h2>Tesla</h2>
+<html>
+ <head></head>
+ <body>
+  <p>Below you can see a class hierarchy:</p> 
+  <pre><code class="language-python">class Car:
+    def __init__(self, company, model):
+        self.company = company
+        self.model = model
+
+
+class Tesla(Car):
+    def __init__(self, model, year, color):
+        super().__init__("Tesla", model)
+        self.year = year
+        self.color = color</code></pre> 
+  <p>Which of the following objects of the class <strong><code class="language-python">Tesla</code></strong> has been created correctly?</p>
+ </body>
+</html>

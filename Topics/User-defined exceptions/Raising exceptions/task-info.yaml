@@ -1,0 +1,14 @@
+type: code
+files:
+- name: main.py
+  visible: true
+  text: |-
+    def sum_with_exceptions(a, b):
+        ...
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/10222#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sat, 12 Feb 2022 22:36:55 UTC
+record: -1

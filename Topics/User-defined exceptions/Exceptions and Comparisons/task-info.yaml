@@ -1,0 +1,14 @@
+type: code
+files:
+- name: main.py
+  visible: true
+  text: |-
+    def check_w_letter(word):
+        ...
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/10223#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sat, 12 Feb 2022 22:19:13 UTC
+record: -1

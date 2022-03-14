@@ -1,0 +1,20 @@
+<h2>Cactus</h2>
+<html>
+ <head></head>
+ <body>
+  <p>Here's a class hierarchy:</p> 
+  <pre><code class="language-python">class Plant:
+    def __init__(self, variety):
+        self.variety = variety
+        print("{} is a plant".format(self.variety))
+
+
+class Cactus(Plant):
+    def __init__(self, variety):
+        super().__init__(variety)
+        print("{} is a cactus".format(self.variety))</code></pre> 
+  <p>You've created a cactus:</p> 
+  <pre><code class="language-python">opuntia = Cactus("Opuntia")</code></pre> 
+  <p>What will be the output?</p>
+ </body>
+</html>

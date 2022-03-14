@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: tesla_car = Tesla("Tesla", "S")
+- text: tesla_car = Tesla("S", 2018, "silver")
+- text: tesla_car = Tesla("Tesla", "S", 2018, "silver")
+- text: tesla_car = Car("Tesla", "S")
+- text: tesla_car = Car("S", 2018, "silver")
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: main.py
+  visible: true
+  text: |+
+    #  You can experiment here, it won’t be checked
+
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/7631#comment
+status: Solved
+record: -1

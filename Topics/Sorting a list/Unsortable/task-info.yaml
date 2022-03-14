@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: '[1, 6, -9, 2.5, 4]'
+- text: '[''!!!'', "Aaa", "Aab", ''foo'', ''bar'', "foobar"]'
+- text: '[5, 1, -2, "45", 0]'
+- text: '[1, 2, 3, 4, 5, 6]'
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: main.py
+  visible: true
+  text: |+
+    #  You can experiment here, it won’t be checked
+
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6786#comment
+status: Solved
+record: -1
+custom_name: Unsortable!

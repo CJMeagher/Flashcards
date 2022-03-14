@@ -1,0 +1,25 @@
+<h2>Understanding the flush</h2>
+<html>
+ <head></head>
+ <body>
+  <p>Here's a program to tangle you a little:</p> 
+  <pre><code class="language-python">f1 = open('one.txt', 'w')
+f2 = open('two.txt', 'w')
+f3 = open('three.txt', 'w')
+
+print('start', 'end', sep=' &amp; ', file=f1)  # [1]
+print('start', file=f2, flush=True)
+f3.write('end')                            # [2]
+print('end', file=f2, flush=True)          # [3]
+
+f1.close()                                 # [4]
+f2.close()                                 # [5]
+f3.close()                                 # [6]</code></pre> 
+  <p>At which point will the string 'end' appear for the first time in any of the files?</p> 
+  <p><button class="btn-sm btn-outline-secondary" onclick="getElementById('hint-672').style.display='inline'"> Hint </button> </p>
+  <div id="hint-672" style="display:none;">
+   Remember what we have discussed about the moment at which files are automatically flushed in Python.
+  </div>
+  <p></p>
+ </body>
+</html>

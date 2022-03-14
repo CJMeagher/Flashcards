@@ -1,0 +1,13 @@
+type: code
+files:
+- name: main.py
+  visible: true
+  text: |-
+    # the follwing line reads the list from the input, do not modify it, please
+    passwords = input().split()
+
+    # your code below
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/10064#comment
+status: Solved
+record: -1

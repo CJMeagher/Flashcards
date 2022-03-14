@@ -1,0 +1,19 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: '"\n\n"'
+- text: '" "'
+- text: int(3.14)
+- text: 999
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: main.py
+  visible: true
+  text: |+
+    #  You can experiment here, it won’t be checked
+
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/7454#comment
+status: Solved
+record: -1

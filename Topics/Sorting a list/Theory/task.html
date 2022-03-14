@@ -1,0 +1,84 @@
+<h2>Sorting a list</h2>
+<html>
+ <head></head>
+ <body>
+  <p>After you have learned how to create and perform basic operations with lists, it is time to explore how to put their items in the order you need. There are two similar ways to do this: the method <code class="language-python">list.sort()</code> and the function <code class="language-python">sorted(list)</code>. They have much in common and take the same arguments, so let's see how they work.</p> 
+  <h5 style="text-align: center;" id="the-sorting">The sorting</h5> 
+  <p>Invoking <code class="language-python">list.sort()</code> as well as <code class="language-python">sorted(list)</code> sorts the list in the <em>ascending order</em> according to the natural order of stored elements.</p> 
+  <pre><code class="language-python"># Invoking list.sort()
+numbers = [3, 2, 5, 4, 1]
+numbers.sort()
+print(numbers)  # [1, 2, 3, 4, 5]
+
+# Invoking sorted(list)
+numbers = [3, 2, 5, 4, 1]
+print(sorted(numbers))  # [1, 2, 3, 4, 5]</code></pre> 
+  <p></p>
+  <div class="alert alert-primary">
+   Note that the 
+   <code class="language-python">sort()</code> method performs an 
+   <em>in-place</em> sorting, changes the original list, and returns 
+   <code class="language-python">None</code>. 
+   <code class="language-python">sorted(list)</code>, on the other hand, creates a new sorted list while the original one remains unmodified.
+  </div>
+  <p></p> 
+  <p>That is why an attempt to use <code class="language-python">print(numbers.sort())</code> will lead to the <code class="language-python">None</code> result while the same attempt with <code class="language-python">sorted(list)</code> gives you the result you need. This is the important distinction between <code class="language-python">sorted(list)</code> and <code class="language-python">list.sort()</code>.</p> 
+  <pre><code class="language-python">print(numbers.sort()) # None</code></pre> 
+  <p>The <code class="language-python">sorted</code> function has one more feature: it works not only with lists but also with other collections, so you can also sort sets, dictionaries, tuples, and so on. The <code class="language-python">list.sort()</code> method, on the contrary, works only with lists.</p> 
+  <p>To sort a list in the <em>descending order</em>, you need to specify the <code class="language-python">reverse</code> argument as <code class="language-python">True</code> (it's <code class="language-python">False</code> by default).</p> 
+  <pre><code class="language-python">numbers = [3, 2, 5, 4, 1]
+print(sorted(numbers, reverse=True))  # [5, 4, 3, 2, 1]
+
+# the same with list.sort()
+numbers.sort(reverse=True)
+print(numbers)  # [5, 4, 3, 2, 1]</code></pre> 
+  <p>Both <code class="language-python">sorted(list)</code> and <code class="language-python">list.sort()</code> can sort strings according to their <strong>lexicographic order</strong> (as in a dictionary).</p> 
+  <pre><code class="language-python">strings = ['aa', 'b', 'aaa', 'q', 'qq']
+strings.sort()
+print(strings)  # ['aa', 'aaa', 'b', 'q', 'qq']</code></pre> 
+  <p>However, if your list has uncomparable types (like strings and integers together), an error will occur both in <code class="language-python">list.sort()</code> and in <code class="language-python">sorted(list)</code>:</p> 
+  <pre><code class="language-no-highlight">TypeError: '&lt;' not supported between instances of 'str' and 'int'</code></pre> 
+  <h5 style="text-align: center;" id="the-key">The key</h5> 
+  <p>There is one more argument that can be used with both functions. You can pass the <code class="language-python">key</code> function, this function will be applied to each element in the list, and the list will be sorted depending on the results. For example, you can use <code class="language-python">key=len</code> to sort words by their length.</p> 
+  <pre><code class="language-python">names = ['Mary', 'James', 'Tom', 'Katarina', 'John']
+names.sort(key=len)
+print(names)  # ['Tom', 'Mary', 'John', 'James', 'Katarina']</code></pre> 
+  <p>You can also use lambda functions as a <code class="language-python">key</code>. For example, if you need to sort numbers by the remainder of dividing by two, you can use a lambda function and the <code class="language-python">%</code> operator. In the example below, 4 is moved to the first place (the remainder is 0), followed by the three other digits with the remainder 1. Note that the relative order of 7, 1, and 5 in the sorted list remains as it was in the initial one.</p> 
+  <pre><code class="language-python">nums = [7, 4, 1, 5]
+print(sorted(nums, key=lambda x: x % 2))  # [4, 7, 1, 5]</code></pre> 
+  <p>What is more, you can use custom functions for the value of the <code class="language-python">key</code> argument. Let's say you have a list of float numbers and you want to sort these numbers by their fractional part. To do so, you can create a function that takes a number as its input and returns the fractional part of this number. The function below performs it by subtracting an integer part from the given number.</p> 
+  <pre><code class="language-python">def my_sorted(x):
+    return x - int(x)
+
+numbers = [1.5, 3.2, 4.3]
+print(sorted(numbers, key=my_sorted))  # [3.2, 4.3, 1.5]</code></pre> 
+  <h5 style="text-align: center;" id="the-reverse">The reverse</h5> 
+  <p>There is one more way to modify the order of elements in a list; you can reverse them. It can be done with the help of either the<code class="language-python">list.reverse()</code> method or by using the <code class="language-python">reversed()</code> function.</p> 
+  <p>Invoking <code class="language-python">list.reverse()</code> reverses the order of elements in the list. Just as <code class="language-python">list.sort()</code>, it operates <em>in place</em> and returns <code class="language-python">None</code>, so you can't assign the result to another variable, instead, the initial list will be changed.</p> 
+  <pre><code class="language-python">initial_list = [1, 2, 3, 4, 5]
+reversed_list = initial_list.reverse()
+print(reversed_list)  # None
+print(initial_list)   # [5, 4, 3, 2, 1]</code></pre> 
+  <p>The function <code class="language-python">reversed()</code> returns a reverse <em>iterator</em>, bypassing which, you can get the elements of the input sequence in the reverse order. To get access to the reversed list, you can write the following:</p> 
+  <pre><code class="language-python">numbers = [1, 2, 3, 4, 5]
+for number in reversed(numbers):
+    print(number) 
+# 5 
+# 4
+# 3
+# 2
+# 1</code></pre> 
+  <p>Pay attention that if you try to print the iterator without using a loop, you will not get the needed result:</p> 
+  <pre><code class="language-python">print(reversed(numbers))  # &lt;list_reverseiterator object at 0x7fe25e718b70&gt;</code></pre> 
+  <h5 style="text-align: center;" id="summary">Summary</h5> 
+  <p>In this topic, <span style="background-color: transparent; color: #0e101a; font-size: 12pt; font-variant: normal;">we have learned how to sort lists using the function <code class="language-python">sorted()</code> and the method <code class="language-python">list.sort()</code>; we've also found out the difference between them and their arguments. Besides, we have learned how to reverse elements in a list with the help of both the function and the method.</span></p> 
+  <p><span style="background-color: transparent; color: #0e101a; font-size: 12pt; font-variant: normal;">To sum up:</span></p> 
+  <ul> 
+   <li><span style="background-color: transparent; color: #0e101a; font-size: 12pt; font-variant: normal;"><code class="language-python">list.sort()</code> and <code class="language-python">list.reverse()</code> work only with list objects; they change the given list and return nothing;</span></li> 
+   <li><span style="background-color: transparent; color: #0e101a; font-size: 12pt; font-variant: normal;"><code class="language-python">sorted()</code> takes any collection as an argument and creates and returns a new item from the given one;</span></li> 
+   <li><span style="background-color: transparent; color: #0e101a; font-size: 12pt; font-variant: normal;"><code class="language-python">reversed()</code> can also take any collection as an argument but returns the reversed iterator of the object rather than the modified object itself;</span></li> 
+   <li><span style="background-color: transparent; color: #0e101a; font-size: 12pt; font-variant: normal;"><code class="language-python">list.sort()</code> and <code class="language-python">sorted()</code> can take the boolean parameter <code class="language-python">reverse</code> to change the order of sorting from </span>ascending<span style="background-color: transparent; color: #0e101a; font-size: 12pt; font-variant: normal;"> to descending, as well as the <code class="language-python">key</code> parameter to specify the sorting function.</span></li> 
+  </ul> 
+  <p><span style="background-color: transparent; color: #0e101a; font-size: 12pt; font-variant: normal;">For additional information about sorting methods, you can check out the </span><a target="_blank" href="https://docs.python.org/3/library/functions.html?highlight=sorted#sorted" rel="noopener noreferrer nofollow">Official Python documentation</a><span style="background-color: transparent; color: #0e101a; font-size: 12pt; font-variant: normal;">.</span></p>
+ </body>
+</html>

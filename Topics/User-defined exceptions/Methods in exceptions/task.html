@@ -1,0 +1,19 @@
+<h2>Methods in exceptions</h2>
+<html>
+ <head></head>
+ <body>
+  <p>Have a look at the code. The <code class="language-python">X</code> method returns a message with an error. What is the correct function name instead of <code class="language-python">X</code>?</p> 
+  <pre><code class="language-python">class LessThanError(Exception):
+    def X(self):
+        return 'There is an error!'
+
+
+x = 100
+if x &lt; 101:
+    raise LessThanError
+# Traceback (most recent call last):
+#   File "main.py", line 7, in &lt;module&gt; 
+#     raise LessThanError
+# LessThanError: There is an error!</code></pre>
+ </body>
+</html>

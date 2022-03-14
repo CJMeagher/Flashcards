@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: No, because we should both open the file before and close it after the print
+    statement
+- text: No, because we should open file in advance, otherwise it just wouldn't work
+- text: 'Yes, because the file is specified, and it will be opened and closed automatically '
+- text: No, because we must close the file before we would be able to see the string
+    there
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: main.py
+  visible: true
+  text: |+
+    #  You can experiment here, it won’t be checked
+
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/8008#comment
+status: Solved
+record: -1
